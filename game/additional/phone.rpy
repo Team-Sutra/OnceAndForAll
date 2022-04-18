@@ -213,7 +213,7 @@ screen phone(number, sender, text_class, hist=None, groupChat=False):
     key "mousedown_1" action If(current_text_num < text_class_size, SetVariable("current_text_num", current_text_num+1), Return(0))
 
 style phone_frame is empty:
-    background If(persistent.iphone, true="mod_assets/iosphoneon.png", false="mod_assets/samsungphoneon.png")
+    background If(persistent.iphone, true="mod_assets/phone/iosphoneon.png", false="mod_assets/phone/samsungphoneon.png")
 
 style phone_text:
     color "#000"
@@ -228,11 +228,11 @@ style iphone_back_text is phone_text:
 
 style text_frame:
     xsize 190
-    background Frame("mod_assets/temptextbubble.png", tile=False)
+    background Frame("mod_assets/phone/temptextbubble.png", tile=False)
 
 style player_text_frame:
     xoffset 100
-    background Frame(If(persistent.iphone, "mod_assets/iphonereplybubble.png", "mod_assets/samsungreplybubble.png"), tile=False)
+    background Frame(If(persistent.iphone, "mod_assets/phone/iphonereplybubble.png", "mod_assets/phone/samsungreplybubble.png"), tile=False)
 
 transform samsung_text_trans:
     alpha 0.0
@@ -296,18 +296,18 @@ screen phone_call(caller, region, voicefile, inCall=False):
                 button:
                     action [Stop("voice"), Return(0)]
 
-                    add "mod_assets/samsunghangupicon.png"
+                    add "mod_assets/phone/samsunghangupicon.png"
             else:
                 button:
                     action [Play("voice", voicefile), Show("phone_call", caller=caller, region=region, voicefile=voicefile, inCall=True), With(Dissolve(0.2))]
 
-                    add "mod_assets/samsungcallicon.png"
+                    add "mod_assets/phone/samsungcallicon.png"
 
 style phone_call_frame:
-    background If(persistent.iphone, "mod_assets/iosphonecall.png", "mod_assets/samsungphonecall.png")
+    background If(persistent.iphone, "mod_assets/phone/iosphonecall.png", "mod_assets/phone/samsungphonecall.png")
 
 style phone_call_incall_frame:
-    background If(persistent.iphone, "mod_assets/iosphonecall.png", "mod_assets/samsungphoneincall.png")
+    background If(persistent.iphone, "mod_assets/phone/iosphonecall.png", "mod_assets/phone/samsungphoneincall.png")
 
 style phone_call_text is phone_text:
     color "#ebebeb"
