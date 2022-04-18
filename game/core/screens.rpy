@@ -531,39 +531,18 @@ screen main_menu():
     tag menu
 
     style_prefix "main_menu"
+    add "white"
+    add "menu_bg"
+    frame
+    ## The use statement includes another screen inside this one. The actual
+    ## contents of the main menu are in the navigation screen.
+    use navigation
 
-    if persistent.ghost_menu:
-        add "white"
-        add "menu_art_y_ghost"
-        add "menu_art_n_ghost"
-    else:
-        add "menu_bg"
-        add "menu_art_y"
-        add "menu_art_n"
-        frame
-
-        ## The use statement includes another screen inside this one. The actual
-        ## contents of the main menu are in the navigation screen.
-        use navigation
-
-    if not persistent.ghost_menu:
-        add "menu_particles"
-        add "menu_particles"
-        add "menu_particles"
-        add "menu_logo"
-    if persistent.ghost_menu:
-        add "menu_art_s_ghost"
-        add "menu_art_m_ghost"
-    else:
-        if persistent.playthrough == 1 or persistent.playthrough == 2:
-            add "menu_art_s_glitch"
-        else:
-            add "menu_art_s"
-        add "menu_particles"
-        if persistent.playthrough != 4:
-            add "menu_art_m"
-        add "menu_fade"
-
+   
+    add "menu_particles"
+    add "menu_particles"
+    add "menu_particles"
+    add "menu_logo"
     if gui.show_name:
 
         vbox:
