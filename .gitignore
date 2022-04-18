@@ -1,0 +1,16 @@
+*.rpyc
+*.rpa
+*.rpymc
+.vscode
+log.txt
+error.txt
+game/cache/*
+game/saves/*
+/eng_scripts
+traceback.txt
+.android.json
+characters/yuri.chr
+characters/sayori.chr
+characters/monika.chr
+errors.txt
+game/saves/navigation.json
